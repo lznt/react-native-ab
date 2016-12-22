@@ -28,7 +28,7 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-let { Experiment, Variant } = require('react-native-ab');
+import { Experiment, Variant } from 'react-native-ab';
 
 let rnabtest = React.createClass({
   render: function() {
