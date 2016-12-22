@@ -18,17 +18,19 @@ All you need is to `require` the `react-native-ab` module and then use the provi
 
 ```javascript
 
-var React = require('react-native');
-var {
+import React from 'react';
+
+import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
   TouchableHighlight
-} = React;
-var { Experiment, Variant } = require('react-native-ab');
+} from 'react-native';
 
-var rnabtest = React.createClass({
+let { Experiment, Variant } = require('react-native-ab');
+
+let rnabtest = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>

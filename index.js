@@ -1,5 +1,5 @@
-module.exports = {
-  Experiment: require('./Experiment'),
-  Tracking: require('./Tracking'),
-  Variant: require('./Variant')
-};
+import Experiment from './Experiment';
+import Tracking from './Tracking';
+import Variant from './Variant';
+
+export { Experiment, Tracking, Variant };

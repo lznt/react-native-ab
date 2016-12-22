@@ -1,6 +1,6 @@
-var React = require('react-native');
-var AdSupportIOS = require('AdSupportIOS');
-var Dimensions = require('Dimensions');
+import React from 'react';
+import AdSupportIOS from 'AdSupportIOS';
+import { Dimensions } from 'react-native';
 
 module.exports = {
   getAdvertisingId(cb) {

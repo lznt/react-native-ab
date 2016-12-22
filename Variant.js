@@ -1,21 +1,26 @@
-var React = require('react-native');
-var { PropTypes } = React;
+import React, {
+  Component,
+  PropTypes
+} from 'react';
 
-var Variant = React.createClass({
-  propTypes: {
-    name: PropTypes.string.isRequired,
-    children: PropTypes.element.isRequired
-  },
-
-  render() {
-    return this.props.children;
-  },
+class Variant extends Component {
+  constructor(props) {
+    super(props);
+    this.isVariant = true;
+  }
 
   getName() {
     return this.props.name;
-  },
+  }
 
-  isVariant: true
-});
+  render() {
+    return this.props.children;
+  }
+};
 
-module.exports = Variant;
+Variant.propTypes = {
+  name: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired
+};
+
+export default Variant;
