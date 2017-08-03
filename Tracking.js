@@ -1,6 +1,5 @@
 import React from 'react';
-import AdSupportIOS from 'AdSupportIOS';
-import { Dimensions } from 'react-native';
+import { AdSupportIOS, Dimensions } from 'react-native';
 
 module.exports = {
   getAdvertisingId(cb) {
