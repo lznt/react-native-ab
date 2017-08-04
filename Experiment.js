@@ -4,8 +4,7 @@ import React, {
 } from 'react';
 
 import  {
-  AsyncStorage,
-  View
+  View,
 } from 'react-native';
 
 import Variant from './Variant';
@@ -22,22 +21,13 @@ class Experiment extends Component {
     this.variants = this.props.children;
 
     this.key = 'react-native-ab:Experiment:' + this.props.name;
+    let choice = this.props.choose(this.variants);
 
-    AsyncStorage.getItem(this.key, ((err, variantName) => {
-      let choice;
-      if (err || !variantName) {
-        choice = this.props.choose(this.variants);
-        AsyncStorage.setItem(this.key, choice.props.name); // Optimistic update
-      }
-      else {
-        choice = this.getVariant(variantName);
-      }
-      this.props.onChoice(this.props.name, choice.props.name);
-      this.props.onRawChoice(this, choice);
-      this._onChange({
-        variant: choice
-      });
-    }).bind(this));
+    this.props.onChoice(this.props.name, choice.props.name);
+    this.props.onRawChoice(this, choice);
+    this._onChange({
+      variant: choice
+    });
   }
 
   getActiveVariant() {
