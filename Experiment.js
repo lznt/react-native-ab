@@ -8,6 +8,8 @@ import  {
   View
 } from 'react-native';
 
+import Variant from './Variant';
+
 class Experiment extends Component {
   constructor(props) {
     super(props);
@@ -73,7 +75,7 @@ Experiment.propTypes = {
       return new Error('You must have at least 2 Variants.');
     }
     for (child of children) {
-      if (!child.type.prototype.isVariant) {
+      if (!child instanceof Variant) {
         return new Error('One or more children is not a Variant.');
       }
     }

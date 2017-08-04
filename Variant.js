@@ -6,6 +6,7 @@ import React, {
 class Variant extends Component {
   constructor(props) {
     super(props);
+    this.isVariant = true;
   }
 
   getName() {
@@ -23,5 +24,3 @@ Variant.propTypes = {
 };
 
 export default Variant;
-
-Variant.isVariant = true;
